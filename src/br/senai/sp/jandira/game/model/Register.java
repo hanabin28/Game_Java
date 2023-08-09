@@ -20,6 +20,8 @@ public class Register {
         PlayerRegister();
         EnemyRegister();
 
+        output.PrintarAmbos();
+
     }
     public void PlayerRegister(){
 

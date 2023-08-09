@@ -13,4 +13,16 @@ public class Output {
         System.out.println("A skin escolhida foi: " + enemy.skin);
     }
 
+//    public void PrintarAmbos(){
+//        int teste = 1;
+//
+//        if (teste==1){
+//            return;
+//        }else {
+//            PrintarPlayer();
+//            PrintarEnemy();
+//        }
+//    }
+
+
 }
