@@ -26,7 +26,7 @@ public class Register {
         output.PrintarEnemy(enemy);
 
     }
-    public void PlayerRegister(){
+    public Player PlayerRegister(){
 
         System.out.println("--------------------------------------");
         System.out.println("------------Cadastro Player-----------");
@@ -40,11 +40,11 @@ public class Register {
         if(avaliaAmbos != 1){
             output.PrintarPlayer(player);
         }
-
+        return player;
     }
 
 
-    public void EnemyRegister(){
+    public Enemy EnemyRegister(){
 
         System.out.println();
         System.out.println("--------------------------------------");
@@ -60,7 +60,7 @@ public class Register {
         if(avaliaAmbos != 1){
             output.PrintarEnemy(enemy);
         }
-
+        return enemy;
     }
 
 
