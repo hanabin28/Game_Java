@@ -37,6 +37,8 @@ public class Menu {
                 case 2:
                     battle.choiceScenario();
                     battle.Battle(register.player, register.enemy);
+                    register.enemy.RestarLife();
+                    register.player.RestarLife();
                     break;
 
                 case 3:

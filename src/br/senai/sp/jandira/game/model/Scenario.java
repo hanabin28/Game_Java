@@ -31,6 +31,9 @@ public class Scenario {
                 scenario = "Berlim";
                 break;
 
+            default:
+                scenario = "Senai Jandira";
+
         }
         return scenario;
 

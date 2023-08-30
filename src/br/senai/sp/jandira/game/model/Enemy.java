@@ -3,7 +3,7 @@ package br.senai.sp.jandira.game.model;
 public class Enemy {
     public String name;
     public String skin;
-    public int life;
+    private int life;
 
     public Enemy(){
         life = 100;
@@ -13,5 +13,15 @@ public class Enemy {
         return life;
     }
 
+    public void SubtrairVida(int danoPlayer){
+        life -= danoPlayer;
 
+        if (life<0){
+            life=0;
+        }
+    }
+
+    public void RestarLife(){
+        life = 100;
+    }
 }

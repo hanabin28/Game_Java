@@ -13,5 +13,18 @@ public class Player {
         return life;
     }
 
+    public void SubtrairVida(int danoEnemy){
+        life -= danoEnemy;
+
+        if (life<0){
+            life=0;
+        }
+    }
+
+
+    public void RestarLife(){
+        life = 100;
+    }
+
 
 }

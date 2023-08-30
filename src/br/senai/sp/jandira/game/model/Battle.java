@@ -27,13 +27,127 @@ public class Battle {
 
         /**Guardando o método SCENARIO(que retorna STRING) e a decisão do usuário na variavel scenarioBattle */
         scenarioBattle = scenario.Scenario(userScenario);
-        System.out.println(scenarioBattle);
 
     }
 
-    public void Battle(Player player, Enemy enemy){
-        System.out.println(player.name);
-        System.out.println(enemy.name);
+    public void Battle(Player player, Enemy enemy) {
+
+        while (true) {
+
+
+            int lifePlayer = player.GetLife();
+            int lifeEnemy = enemy.GetLife();
+
+            if (lifePlayer == 0) {
+                System.out.println("O vencedor é o Enemy " + enemy.name + "!!!");
+                break;
+            }else if (lifeEnemy == 0) {
+                System.out.println("O vencedor é o Player " + player.name + "!!!");
+                break;
+            }
+
+            System.out.println("----------   Battle   ----------");
+            System.out.println("Ataque Player [R] - " + player.name + "- Life player: " + lifePlayer);
+            System.out.println("Ataque Enemy [Q] - " + enemy.name + "- Life enemy: " + lifeEnemy);
+            System.out.println("Defesa (Player e Enemy) [1 - 5]");
+            System.out.println("--------------------------------");
+
+            String ataque = teclado.next();
+
+            ////
+            if (ataque.equalsIgnoreCase("R")) {
+                System.out.println("-------------------------");
+                System.out.println("--   O Player atacou   --");
+                System.out.println("-------------------------");
+
+                int danoPlayer = (int) (Math.random() * 20) + 1;
+
+                System.out.println("-------------------------");
+                System.out.println("-- O ataque foi de: " + danoPlayer + " --");
+                System.out.println("-------------------------");
+
+
+                System.out.println("Digite um número para defesa [1 -5]: ");
+
+                int defesaNumero = teclado.nextInt();
+
+                int defesa = (int) (Math.random()*5)+1;
+                System.out.println(defesa);
+
+                System.out.println("-------------------------");
+                System.out.println("--   O Enemy defendeu  --");
+                System.out.println("-------------------------");
+
+                int defesaEnemy = (int) (Math.random() * 20) + 1;
+
+                System.out.println("-------------------------");
+                System.out.println("-- A defesa foi de: " + defesaEnemy + " --");
+                System.out.println("-------------------------");
+
+                int danoReal = danoPlayer - defesaEnemy;
+
+                if (defesaNumero == defesa){
+                    danoReal = danoPlayer - defesaEnemy;
+                }else{
+                    danoReal = danoPlayer;
+                }
+
+                if (danoReal<0){
+                    danoReal=0;
+                }
+
+                enemy.SubtrairVida(danoReal);
+
+                ////
+            } else if (ataque.equalsIgnoreCase("Q")) {
+                ////
+                System.out.println("-------------------------");
+                System.out.println("--    O Enemy atacou   --");
+                System.out.println("-------------------------");
+
+                int danoEnemy = (int) (Math.random() * 20) + 1;
+
+                System.out.println("-------------------------");
+                System.out.println("-- O ataque foi de: " + danoEnemy + " --");
+                System.out.println("-------------------------");
+
+                System.out.println("Digite um número para defesa [1 -5]: ");
+                int defesaNumero = teclado.nextInt();
+
+                int defesa = (int) (Math.random() * 5) + 1;
+                System.out.println(defesa);
+
+                System.out.println("-------------------------");
+                System.out.println("--  O Player defendeu  --");
+                System.out.println("-------------------------");
+
+                int defesaPlayer = (int) (Math.random() * 20) + 1;
+
+                System.out.println("-------------------------");
+                System.out.println("-- A defesa foi de: " + defesaPlayer + " --");
+                System.out.println("-------------------------");
+
+                int danoReal = danoEnemy - defesaPlayer;
+
+                if (defesaNumero == defesa){
+                    danoReal = danoEnemy - defesaPlayer;
+                }else{
+                    danoReal = danoEnemy;
+                }
+
+                if (danoReal<0){
+                    danoReal=0;
+                }
+
+
+                player.SubtrairVida(danoReal);
+
+
+                ////
+            } else {
+                System.out.println("Tecla inválida!!");
+            }
+        }
     }
 
 
