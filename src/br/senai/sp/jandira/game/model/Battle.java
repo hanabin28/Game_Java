@@ -72,11 +72,11 @@ public class Battle {
                 int defesaNumero = teclado.nextInt();
 
                 int defesa = (int) (Math.random()*5)+1;
-                System.out.println(defesa);
 
                 System.out.println("-------------------------");
                 System.out.println("--   O Enemy defendeu  --");
                 System.out.println("-------------------------");
+                System.out.println("O número gerado foi: " + defesa);
 
                 int defesaEnemy = (int) (Math.random() * 20) + 1;
 
@@ -115,11 +115,12 @@ public class Battle {
                 int defesaNumero = teclado.nextInt();
 
                 int defesa = (int) (Math.random() * 5) + 1;
-                System.out.println(defesa);
+
 
                 System.out.println("-------------------------");
                 System.out.println("--  O Player defendeu  --");
                 System.out.println("-------------------------");
+                System.out.println("O número gerado foi: " + defesa);
 
                 int defesaPlayer = (int) (Math.random() * 20) + 1;
 
